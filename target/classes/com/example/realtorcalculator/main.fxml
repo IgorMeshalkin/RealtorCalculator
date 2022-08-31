@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="540.0" prefWidth="430.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realtorcalculator.RealtorCalculatorController">
+   <children>
+      <Text fill="#5b5959" layoutX="32.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Калькулятор риэлтора" wrappingWidth="382.865234375">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="30.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Калькулятор риэлтора" wrappingWidth="382.865234375">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Text>
+      <Pane layoutY="106.0" prefHeight="142.0" prefWidth="430.0" style="-fx-background-color: DarkGrey;">
+         <children>
+            <Text fill="#5b5959" layoutX="15.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Реальная сумма сделки:">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#5b5959" layoutX="15.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Необходимый % ПВ:">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Реальная сумма сделки:">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <TextField fx:id="realSumField" layoutX="14.0" layoutY="35.0" prefHeight="25.0" prefWidth="277.0" />
+            <Text fill="WHITE" layoutX="14.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Необходимый % ПВ:">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <TextField fx:id="percentField" layoutX="14.0" layoutY="101.0" prefHeight="25.0" prefWidth="117.0" />
+         </children>
+      </Pane>
+      <RadioButton fx:id="noPvRadioButton" layoutX="8.0" layoutY="259.0" mnemonicParsing="false" text="ПВ нет вообще" textFill="#fffefe" />
+      <RadioButton fx:id="partPvRadioButton" layoutX="124.0" layoutY="259.0" mnemonicParsing="false" text="ПВ есть частично" textFill="#fffefe" />
+      <RadioButton fx:id="needCashRadioButton" layoutX="251.0" layoutY="259.0" mnemonicParsing="false" text="Нужно получить наличные" textFill="#fffefe" />
+      <Label fx:id="pvLabelShadow" layoutX="16.0" layoutY="291.0" text="Первоначальный взнос:" textFill="#5b5959">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="pvLabel" layoutX="15.0" layoutY="290.0" text="Первоначальный взнос:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pvField" layoutX="14.0" layoutY="327.0" prefHeight="25.0" prefWidth="277.0" />
+      <Pane layoutY="368.0" prefHeight="136.0" prefWidth="430.0" style="-fx-background-color: DarkGrey;">
+         <children>
+            <RadioButton fx:id="notRoundUpRadioButton" layoutX="11.0" layoutY="11.0" mnemonicParsing="false" text="Не округлять" textFill="#fffefe" />
+            <RadioButton fx:id="roundUpTo10RadioButton" layoutX="131.0" layoutY="11.0" mnemonicParsing="false" text="Округлять до 10 т.р" textFill="#fffefe" />
+            <RadioButton fx:id="roundUpTo50RadioButton" layoutX="282.0" layoutY="11.0" mnemonicParsing="false" text="Округлять до 50 т.р" textFill="#fffefe" />
+            <Button fx:id="resultButton" layoutX="14.0" layoutY="41.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="146.0" text="Показать &#10;результат">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Pane layoutX="183.0" layoutY="41.0" prefHeight="77.0" prefWidth="233.0" style="-fx-background-color: white;">
+               <children>
+                  <Label fx:id="resultLabel" layoutX="8.0" layoutY="3.0" prefHeight="71.0" prefWidth="218.0" text="Здесь будет отображаться результат" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Button fx:id="gradeButton" layoutX="92.0" layoutY="515.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="226.0" text="Оценить приложение в два клика" />
+      <Button fx:id="tRubButton" layoutX="12.0" layoutY="64.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="195.0" text="тыс. руб." />
+      <Button fx:id="rubButton" layoutX="220.0" layoutY="64.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="195.0" text="руб." />
+   </children>
+</AnchorPane>
