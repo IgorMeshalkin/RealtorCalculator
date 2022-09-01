@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: Grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realtorcalculator.controller.IncorrectDataController">
+   <children>
+      <Text fill="#464545" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введены не корректные данные.&#10;Нужно вводить только цифры, &#10;без пробелов.&#10;&#10;Будьте внимательны." textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="13.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введены не корректные данные.&#10;Нужно вводить только цифры, &#10;без пробелов.&#10;&#10;Будьте внимательны." textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="okButton" layoutX="99.0" layoutY="152.0" mnemonicParsing="false" onAction="#closeCurrentWindow" prefHeight="0.0" prefWidth="136.0" text="Хорошо">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

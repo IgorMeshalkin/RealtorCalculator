@@ -4,13 +4,19 @@ import com.example.realtorcalculator.model.Deal;
 import com.example.realtorcalculator.model.InitialFeeStatus;
 import com.example.realtorcalculator.model.RoundingResult;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RealtorCalculatorController implements Initializable {
+
+    private static Deal deal = new Deal();
 
     @FXML
     private Button gradeButton;
@@ -66,7 +72,6 @@ public class RealtorCalculatorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Deal deal = new Deal();
         pvField.setText("0");
 
         //Группа Radiobutton работающих с округлением результата:
@@ -131,11 +136,51 @@ public class RealtorCalculatorController implements Initializable {
 
         //Кнопка "Получить результат"
         resultButton.setOnAction(event -> {
-            deal.setRealSum(Double.parseDouble(realSumField.getText()));
-            deal.setPercent(Double.parseDouble(percentField.getText()));
-            deal.setInitialFee(Double.parseDouble(pvField.getText()));
+            try {
+                deal.setRealSum(Double.parseDouble(realSumField.getText()));
+                deal.setPercent(Double.parseDouble(percentField.getText()));
+                deal.setInitialFee(deal.getInitialFeeStatus().equals(InitialFeeStatus.NO_INITIAL_FEE) ? 0.0 : Double.parseDouble(pvField.getText()));
 
-            resultLabel.setText(deal.getResult());
+                if ((deal.getRealSum() <= 100000.0 && deal.isShowThousands())
+                        || (deal.getRealSum() >= 100000.0 && !deal.isShowThousands())) {
+                    openIncorrectUnitsWindow();
+                } else {
+                    resultLabel.setText(deal.getResult());
+                }
+
+            } catch (NumberFormatException e) {
+                openIncorrectDataWindow();
+            }
         });
+    }
+
+    private void openIncorrectDataWindow() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(RealtorCalculatorApp.class.getResource("incorrectData.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 350, 200);
+            Stage stage = new Stage();
+            stage.setTitle("Ошибка ввода");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openIncorrectUnitsWindow() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(RealtorCalculatorApp.class.getResource("incorrectUnits.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 350, 190);
+            Stage stage = new Stage();
+            stage.setTitle("Не корректные единицы измерения");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Deal getDeal() {
+        return deal;
     }
 }

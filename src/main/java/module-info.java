@@ -12,4 +12,6 @@ module com.example.realtorcalculator {
 
     opens com.example.realtorcalculator to javafx.fxml;
     exports com.example.realtorcalculator;
+    exports com.example.realtorcalculator.controller;
+    opens com.example.realtorcalculator.controller to javafx.fxml;
 }
