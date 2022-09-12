@@ -78,7 +78,6 @@
             </Pane>
          </children>
       </Pane>
-      <Button fx:id="gradeButton" layoutX="92.0" layoutY="515.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="226.0" text="Оценить приложение в два клика" />
       <Button fx:id="tRubButton" layoutX="12.0" layoutY="64.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="195.0" text="тыс. руб." />
       <Button fx:id="rubButton" layoutX="220.0" layoutY="64.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="195.0" text="руб." />
    </children>

@@ -19,9 +19,6 @@ public class RealtorCalculatorController implements Initializable {
     private static Deal deal = new Deal();
 
     @FXML
-    private Button gradeButton;
-
-    @FXML
     private RadioButton needCashRadioButton;
 
     @FXML
@@ -82,14 +79,17 @@ public class RealtorCalculatorController implements Initializable {
 
         notRoundUpRadioButton.setOnAction(event -> {
             deal.setRoundingResult(RoundingResult.NO_ROUND);
+            resultLabel.setText(deal.getResult());
         });
 
         roundUpTo10RadioButton.setOnAction(event -> {
             deal.setRoundingResult(RoundingResult.ROUND_TO_10);
+            resultLabel.setText(deal.getResult());
         });
 
         roundUpTo50RadioButton.setOnAction(event -> {
             deal.setRoundingResult(RoundingResult.ROUND_TO_50);
+            resultLabel.setText(deal.getResult());
         });
 
         //Группа Radiobutton работающих со статусом первоначального взноса:
