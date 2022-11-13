@@ -23,7 +23,7 @@
       </Text>
       <Pane layoutY="106.0" prefHeight="142.0" prefWidth="430.0" style="-fx-background-color: DarkGrey;">
          <children>
-            <Text fill="#5b5959" layoutX="15.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Реальная сумма сделки:">
+            <Text fill="#5b5959" layoutX="15.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Действительная сумма сделки:">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -33,7 +33,7 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Реальная сумма сделки:">
+            <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Действительная сумма сделки:">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
